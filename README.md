@@ -1,1 +1,2 @@
-# Tejo
+# TEJO
+## Le projet est constitué de deux parties:Une première oú on analiser des vidèos de lancés de tejos qu'on a filmé, pour cela on utilisera un programme qui fera une soustraction d'image pour mieux voir la trajectoire de l'objet et donc pouvoir la suivre plus facilement dans le programme Tracker. Dans une deuxième partie, on essaiera d'implémenter une manière plus facile et pratique de joeur au tejo, on  instalera un laser 
