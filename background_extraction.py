@@ -22,7 +22,6 @@ background_extractor = cv2.createBackgroundSubtractorMOG2()
 # Paramètres de la vidéo de sortie
 width = cap.get(cv2.CAP_PROP_FRAME_WIDTH)
 height = cap.get(cv2.CAP_PROP_FRAME_HEIGHT)
-
 fps = 20.0
 fourcc = cv2.VideoWriter_fourcc(*'XVID')
 out = cv2.VideoWriter(file_output, fourcc, fps, (int(width), int(height)))
