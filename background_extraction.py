@@ -4,10 +4,9 @@ import cv2
 import os
 
 # On définit les paramètres (nom de la vidéo)
-filename = 'GOPR10.mp4'
+filename = 'GOPR11.mp4'
 file_input = os.path.join(os.getcwd(), 'video', filename)
 file_output = os.path.join(os.getcwd(), 'output', filename[:-4] + '.avi')
-
 
 # On définit la capture pour la vidéo entrante: cap
 cap = cv2.VideoCapture(file_input)
@@ -30,8 +29,6 @@ out = cv2.VideoWriter(file_output, fourcc, fps, (int(width), int(height)))
 # On désactive OpenCL, celui-ci sert seulement si l'ordinateur possède une carte graphique,
 # si on ne fait pas cela la suite ne pourra pas fonctionner sur des ordinateurs qui ne la possèdent pas
 cv2.ocl.setUseOpenCL(False)
-
-cap.set(cv2.CAP_PROP_POS_FRAMES, 500)
 
 # Si le fichier est ouvert, continuer
 while cap.isOpened():
@@ -56,7 +53,7 @@ while cap.isOpened():
 
             # Si le contour a une aire supérieure à 30 pixels carrés
             # et inférieure 70 pixels carrés, continuer
-            if cv2.contourArea(contour) >30 and cv2.contourArea(contour) <70:
+            if cv2.contourArea(contour) >100 and cv2.contourArea(contour) <70:
                 (x, y, w, h) = cv2.boundingRect(contour)
                 cv2.rectangle(frame, (x, y), (x + w, y + h), (0, 0, 255), 2)
                 cv2.rectangle(fgmask, (x, y), (x + w, y + h), (255, 255, 255), 2)
